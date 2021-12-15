@@ -1,0 +1,6 @@
+public struct FusionUserSharedPrefs {
+    public private(set) var text = "Hello, World!"
+
+    public init() {
+    }
+}
