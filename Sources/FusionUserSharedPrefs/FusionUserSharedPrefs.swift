@@ -42,16 +42,22 @@ public class FusionUserSharedPrefs {
             return (UserDefaults.standard.value(forKey: key) as? T) ?? defaultValue
     }
     
-    public func removeValue(key: String) {
-            UserDefaults.standard.removeObject(forKey: key)
-            UserDefaults.standard.synchronize()
-    }
-    
     public func containsKey(key:String) -> Bool {
         if UserDefaults.standard.object(forKey: key) == nil {
             return false
         } else {
             return true
+        }
+    }
+    
+    public func removeKey(key: String) {
+            UserDefaults.standard.removeObject(forKey: key)
+            UserDefaults.standard.synchronize()
+    }
+    
+    public func removeAll() {
+        if let appDomain = Bundle.main.bundleIdentifier {
+        UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
     }
 }
