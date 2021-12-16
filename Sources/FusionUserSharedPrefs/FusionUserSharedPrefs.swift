@@ -6,7 +6,7 @@ public class FusionUserSharedPrefs {
         
     }
     
-    public func set<T>(_ value: T?, for key: String) {
+    public func set<T>(value: T?, key: String) {
             if let value = value {
                 UserDefaults.standard.setValue(value, forKey: key)
                 UserDefaults.standard.synchronize()
