@@ -20,7 +20,19 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FusionUserSharedPrefs",
-            dependencies: []),
+            dependencies: [
+                .target(name: "FusionUserSharedPrefs_Common"),
+                .target(name: "FusionUserSharedPrefs_Apple", condition: .when(platforms: [.iOS, .macOS])),
+            ]),
+        .target(
+            name: "FusionUserSharedPrefs_Common"
+        ),
+        .target(
+            name: "FusionUserSharedPrefs_Apple",
+            dependencies: [
+                .target(name: "FusionUserSharedPrefs_Common"),
+            ]
+        ),
         .testTarget(
             name: "FusionUserSharedPrefsTests",
             dependencies: ["FusionUserSharedPrefs"]),
