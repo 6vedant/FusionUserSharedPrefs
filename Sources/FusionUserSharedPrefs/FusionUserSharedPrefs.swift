@@ -50,13 +50,11 @@ public class FusionUserSharedPrefs {
             UserDefaults.standard.synchronize()
     }
     
-    
-    
     public func containsKey(key:String) -> Bool {
         if UserDefaults.standard.object(forKey: key) == nil {
-            return true
-        } else {
             return false
+        } else {
+            return true
         }
     }
     
