@@ -9,7 +9,7 @@ import Foundation
 import FusionUserSharedPrefs_Common
 import AppKit
 
-public class   UserDefaulatsManager: UserDefaultsManagerProtocol  {
+public class UserDefaulatsManager: UserDefaultsManagerProtocol  {
     
     required public init(){}
     
