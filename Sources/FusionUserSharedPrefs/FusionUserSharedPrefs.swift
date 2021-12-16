@@ -1,10 +1,8 @@
 import Foundation
-public class FusionUserSharedPrefs {
-    
 
-    public init() {
-        
-    }
+public class FusionUserSharedPrefs {
+
+    public init() {}
     
     public func set<T>(value: T?, key: String) {
             if let value = value {
@@ -19,7 +17,6 @@ public class FusionUserSharedPrefs {
         let intValue:Int = UserDefaults.standard.integer(forKey: key)
         return intValue
     }
-    
     
     public func getString(key:String) -> String{
         let strValue:String = UserDefaults.standard.string(forKey: key) ?? ""
@@ -57,6 +54,4 @@ public class FusionUserSharedPrefs {
             return true
         }
     }
-    
-    
 }
