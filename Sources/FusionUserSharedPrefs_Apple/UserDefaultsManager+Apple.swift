@@ -63,8 +63,4 @@ public class UserDefaulatsManager: UserDefaultsManagerProtocol  {
             UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
     }
-    
-    public func getAll() -> [String : Any?] {
-        return UserDefaults.standard.dictionaryRepresentation()
-    }
 }

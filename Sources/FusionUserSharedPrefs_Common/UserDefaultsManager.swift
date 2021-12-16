@@ -114,14 +114,5 @@ public protocol UserDefaultsManagerProtocol {
      *
      */
     func removeAll() -> Void
-    
-    /*
-     * @property getAll
-     *
-     * return the dictionary containing all the key-value pairs present in the UserDefaults
-     *
-     * @result Dictionary[Key, Value]
-     */
-    func getAll() -> [String: Any?]
 }
 
