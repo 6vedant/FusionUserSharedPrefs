@@ -1,3 +1,3 @@
 # FusionUserSharedPrefs
 
-A description of this package.
+Wrapper of Swift UserDefaults
