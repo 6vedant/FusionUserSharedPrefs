@@ -7,7 +7,6 @@
 
 import Foundation
 import FusionUserSharedPrefs_Common
-import AppKit
 
 public class UserDefaulatsManager: UserDefaultsManagerProtocol  {
     
