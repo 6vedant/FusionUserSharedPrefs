@@ -14,6 +14,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
+        .package(name: "Android", url: "https://github.com/scade-platform/swift-android.git", .branch("android/24"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -23,6 +24,7 @@ let package = Package(
             dependencies: [
                 .target(name: "FusionUserSharedPrefs_Common"),
                 .target(name: "FusionUserSharedPrefs_Apple", condition: .when(platforms: [.iOS, .macOS])),
+                .target(name: "FusionUserSharedPrefs_Android", condition: .when(platforms: [.android])),
             ]),
         .target(
             name: "FusionUserSharedPrefs_Common"
@@ -31,6 +33,15 @@ let package = Package(
             name: "FusionUserSharedPrefs_Apple",
             dependencies: [
                 .target(name: "FusionUserSharedPrefs_Common"),
+            ]
+        ),
+        .target(
+            name: "FusionUserSharedPrefs_Android",
+            dependencies: [
+                .target(name: "FusionUserSharedPrefs_Common"),
+                .product(name: "Android", package: "Android", condition: .when(platforms: [.android])),
+                .product(name: "AndroidOS", package: "Android", condition: .when(platforms: [.android])),
+                .product(name: "AndroidContent", package: "Android", condition: .when(platforms: [.android]))
             ]
         ),
         .testTarget(
