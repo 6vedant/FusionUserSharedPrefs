@@ -2,24 +2,26 @@
 //  File.swift
 //  
 //
-//  Created by VJ on 16/12/21.
+//  Created by VJ on 18/12/21.
 //
 
 import Foundation
+
+import Android
+import AndroidContent
 import FusionUserSharedPrefs_Common
 
-public class UserDefaultsManager: NSObject, UserDefaultsManagerProtocol  {
+public class UserDefaultsManager: NSObject, UserDefaultsManagerProtocol   {
     
-    required public override init(){}
+   required public override init(){
+   }
     
     public func set<T>(value: T?, key: String) {
         if let value = value {
             Foundation.UserDefaults.standard.set(value, forKey: key)
             Foundation.UserDefaults.standard.synchronize()
         } else {
-            UserDefaults.standard.removeObject(forKey: key)
-            
-            
+            UserDefaults.standard.removeObject(forKey: key) 
         }
     }
     
@@ -66,4 +68,6 @@ public class UserDefaultsManager: NSObject, UserDefaultsManagerProtocol  {
             UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
     }
-}
+
+    
+ }

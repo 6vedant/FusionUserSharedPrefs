@@ -37,7 +37,7 @@ public protocol UserDefaultsManagerProtocol {
      *
      * @result Object Value
      */
-    func get<T>(for key:String, or defaultValue: T) -> T
+   // func get<T>(for key:String, or defaultValue: T) -> T
     
     /*
      * @property getInt
