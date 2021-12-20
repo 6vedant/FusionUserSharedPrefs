@@ -47,9 +47,9 @@ public class UserDefaultsManager:  UserDefaultsManagerProtocol  {
         return boolValue
     }
     
-    public func getDouble(key: String) -> Double {
-        let doubleValue:Double = UserDefaults.standard.double(forKey: key)
-        return doubleValue
+    public func getFloat(key: String) -> Float {
+        let floatValue:Float = UserDefaults.standard.float(forKey: key)
+        return floatValue
     }
     
     public func containsKey(key: String) -> Bool {

@@ -83,9 +83,9 @@ public protocol UserDefaultsManagerProtocol {
      *
      * @param key: Key Value
      *
-     * @result Double Value
+     * @result Float Value
      */
-    func getDouble(key:String) -> Double
+    func getFloat(key:String) -> Float
     
     /*
      * @property containsKey

@@ -17,6 +17,8 @@ public class UserDefaultsManager: Object, UserDefaultsManagerProtocol, SharedPre
     weak var delegate: SharedPreferencesProxyProtocol? 
       
     public func set<T>(value: T?, key: String) {
+    
+    
         if let value = value {
             Foundation.UserDefaults.standard.set(value, forKey: key)
             Foundation.UserDefaults.standard.synchronize()
@@ -31,23 +33,23 @@ public class UserDefaultsManager: Object, UserDefaultsManagerProtocol, SharedPre
 //    }
     
     public func getInt(key: String) -> Int {
-        let intValue:Int = UserDefaults.standard.integer(forKey: key)
-        return intValue
+        let intValue:Int32 = (delegate?.getInt(key: key, defValue: 0)) ?? 0
+        return Int(intValue)
     }
     
     public func getString(key: String) -> String {
-        let strValue:String = delegate?.getString(key: key, defValue: "")  ?? ""
+        let strValue:String = delegate?.getString(key: key, defValue: "defvalueforgetstring")  ?? ""
         return strValue
     }
     
     public func getBoolean(key: String) -> Bool {
-        let boolValue:Bool = UserDefaults.standard.bool(forKey: key)
+        let boolValue:Bool = delegate?.getBoolean(key: key, defValue: false)  ?? false
         return boolValue
     }
     
-    public func getDouble(key: String) -> Double {
-        let doubleValue:Double = UserDefaults.standard.double(forKey: key)
-        return doubleValue
+    public func getFloat(key: String) -> Float {
+        let floatValue:Float = delegate?.getFloat(key: key, defValue: 0.0)  ?? 0.0
+        return floatValue
     }
     
     public func containsKey(key: String) -> Bool {
