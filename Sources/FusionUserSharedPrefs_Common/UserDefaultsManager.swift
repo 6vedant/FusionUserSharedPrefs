@@ -13,7 +13,7 @@ public protocol UserDefaultsManagerProtocol {
      * default init method
      */
     
-    init()
+    //init()
     
     /*
      * @property set

@@ -10,12 +10,12 @@ import Foundation
 import Android
 import AndroidContent
 import FusionUserSharedPrefs_Common
+import Java
 
-public class UserDefaultsManager: NSObject, UserDefaultsManagerProtocol   {
+public class UserDefaultsManager: Object, UserDefaultsManagerProtocol, SharedPreferencesProxyProtocol   {
     
-   required public override init(){
-   }
-    
+    weak var delegate: SharedPreferencesProxyProtocol? 
+      
     public func set<T>(value: T?, key: String) {
         if let value = value {
             Foundation.UserDefaults.standard.set(value, forKey: key)
@@ -26,7 +26,7 @@ public class UserDefaultsManager: NSObject, UserDefaultsManagerProtocol   {
     }
     
 //    public func get<T>(for key: String, or defaultValue: T) -> T {
-//    	let curr_val:T = UserDefaults.standard.value(forKey: ${1:String})(forKey: key)
+//    	let curr_val:T = Userandard.value(forKey: )(forKey: key)
 //    	return T 
 //    }
     
@@ -36,7 +36,7 @@ public class UserDefaultsManager: NSObject, UserDefaultsManagerProtocol   {
     }
     
     public func getString(key: String) -> String {
-        let strValue:String = UserDefaults.standard.string(forKey: key) ?? ""
+        let strValue:String = delegate?.getString(key: key, defValue: "")  ?? ""
         return strValue
     }
     

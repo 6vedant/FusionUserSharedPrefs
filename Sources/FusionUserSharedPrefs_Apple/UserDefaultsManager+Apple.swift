@@ -8,9 +8,13 @@
 import Foundation
 import FusionUserSharedPrefs_Common
 
-public class UserDefaultsManager: NSObject, UserDefaultsManagerProtocol  {
+public class UserDefaultsManager:  UserDefaultsManagerProtocol  {
     
-    required public override init(){}
+    init() {
+    	
+    }
+    
+     
     
     public func set<T>(value: T?, key: String) {
         if let value = value {
