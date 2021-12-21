@@ -10,34 +10,48 @@ import Foundation
 public protocol UserDefaultsManagerProtocol {
     
     /*
-     * default init method
+     * @property set
+     *
+     * @discussion key-value pairs for the value Intger type
+     *
+     * @param value: Integer
+     *        key: Key String Value
+     *
      */
-    
-    //init()
+    func putInt(value: Int, key: String) -> Void
     
     /*
      * @property set
      *
-     * @discussion key-value pairs for the value generic Object type
+     * @discussion key-value pairs for the value Boolean type
      *
-     * @param value: Any Object
+     * @param value: Boolean
      *        key: Key String Value
      *
      */
-    func set<T>(value: T?, key: String) -> Void
-    
+    func putBoolean(value: Bool, key: String) -> Void
     
     /*
-     * @property get
+     * @property set
      *
-     * @discussion get the value generic Object for the given key
+     * @discussion key-value pairs for the value String type
      *
-     * @param key: Key Value
-     *        defVal: Default ObjValue
+     * @param value: String
+     *        key: Key String Value
      *
-     * @result Object Value
      */
-   // func get<T>(for key:String, or defaultValue: T) -> T
+    func putString(value: String, key: String) -> Void
+    
+    /*
+     * @property set
+     *
+     * @discussion key-value pairs for the value Float type
+     *
+     * @param value: Float
+     *        key: Key String Value
+     *
+     */
+    func putFloat(value: Float, key: String) -> Void
     
     /*
      * @property getInt

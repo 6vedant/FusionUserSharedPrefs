@@ -9,28 +9,24 @@ import Foundation
 import FusionUserSharedPrefs_Common
 
 public class UserDefaultsManager:  UserDefaultsManagerProtocol  {
+
+    init() {}
     
-    init() {
-    	
+    public func putInt(value: Int, key: String) {
+        UserDefaults.standard.set(value, forKey: key)
     }
     
-     
-    
-    public func set<T>(value: T?, key: String) {
-        if let value = value {
-            Foundation.UserDefaults.standard.set(value, forKey: key)
-            Foundation.UserDefaults.standard.synchronize()
-        } else {
-            UserDefaults.standard.removeObject(forKey: key)
-            
-            
-        }
+    public func putBoolean(value: Bool, key: String) {
+        UserDefaults.standard.set(value, forKey: key)
     }
     
-//    public func get<T>(for key: String, or defaultValue: T) -> T {
-//    	let curr_val:T = UserDefaults.standard.value(forKey: ${1:String})(forKey: key)
-//    	return T 
-//    }
+    public func putString(value: String, key: String) {
+        UserDefaults.standard.set(value, forKey: key)
+    }
+    
+    public func putFloat(value: Float, key: String) {
+        UserDefaults.standard.set(value, forKey: key)
+    }
     
     public func getInt(key: String) -> Int {
         let intValue:Int = UserDefaults.standard.integer(forKey: key)
