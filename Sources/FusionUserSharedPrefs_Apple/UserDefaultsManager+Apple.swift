@@ -9,7 +9,7 @@ import Foundation
 import FusionUserSharedPrefs_Common
 
 public class UserDefaultsManager:  UserDefaultsManagerProtocol  {
-
+    
     public required init() {}
     
     public func putInt(value: Int32, key: String) {
