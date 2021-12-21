@@ -20,7 +20,7 @@ public protocol UserDefaultsManagerProtocol {
      *        key: Key String Value
      *
      */
-    func putInt(value: Int, key: String) -> Void
+    func putInt(value: Int32, key: String) -> Void
     
     /*
      * @property set
@@ -65,7 +65,7 @@ public protocol UserDefaultsManagerProtocol {
      *
      * @result Int Value
      */
-    func getInt(key:String) -> Int
+    func getInt(key:String) -> Int32
     
     /*
      * @property getString

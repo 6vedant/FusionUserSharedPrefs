@@ -28,7 +28,7 @@ public class UserDefaultsManager: Object, UserDefaultsManagerProtocol,
     super.init(ctor: ctor, args)
   }
 
-  public func putInt(value: Int, key: String) {
+  public func putInt(value: Int32, key: String) {
   	let val32:Int32 = value
     delegateEditor!.putInt(key: key, value: val32)
     delegateEditor!.commit()
@@ -49,9 +49,9 @@ public class UserDefaultsManager: Object, UserDefaultsManagerProtocol,
     delegateEditor!.commit()
   }
 
-  public func getInt(key: String) -> Int {
+  public func getInt(key: String) -> Int32 {
     let intValue:Int32 = (delegate?.getInt(key: key, defValue: 0)) ?? 0
-    return Int(intValue)
+    return intValue
   }
 
   public func getString(key: String) -> String {
@@ -70,7 +70,7 @@ public class UserDefaultsManager: Object, UserDefaultsManagerProtocol,
   }
 
   public func containsKey(key: String) -> Bool {
-    return delegate.contains(key: key)
+    return delegate!.contains(key: key)
   }
 
   public func removeKey(key: String) {

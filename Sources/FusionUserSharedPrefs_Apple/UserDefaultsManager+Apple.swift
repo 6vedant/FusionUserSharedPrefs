@@ -12,7 +12,7 @@ public class UserDefaultsManager:  UserDefaultsManagerProtocol  {
 
     public required init() {}
     
-    public func putInt(value: Int, key: String) {
+    public func putInt(value: Int32, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
     
@@ -28,9 +28,9 @@ public class UserDefaultsManager:  UserDefaultsManagerProtocol  {
         UserDefaults.standard.set(value, forKey: key)
     }
     
-    public func getInt(key: String) -> Int {
+    public func getInt(key: String) -> Int32 {
         let intValue:Int = UserDefaults.standard.integer(forKey: key)
-        return intValue
+        return Int32(intValue)
     }
     
     public func getString(key: String) -> String {
