@@ -10,7 +10,7 @@ import FusionUserSharedPrefs_Common
 
 public class UserDefaultsManager:  UserDefaultsManagerProtocol  {
 
-    init() {}
+    public required init() {}
     
     public func putInt(value: Int, key: String) {
         UserDefaults.standard.set(value, forKey: key)

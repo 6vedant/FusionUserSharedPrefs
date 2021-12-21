@@ -9,6 +9,8 @@ import Foundation
 
 public protocol UserDefaultsManagerProtocol {
     
+    init()
+    
     /*
      * @property set
      *
